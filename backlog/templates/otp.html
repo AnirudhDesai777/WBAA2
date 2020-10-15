@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+	.container{
+            height: 100%;
+            align-content: center;
+            
+
+}
+
+
+  
+.card{
+height: 350px;
+margin-top: 150px;
+margin-bottom: 150px;
+width: 400px;
+background-color: rgba(0, 0, 0, 0.116) ;
+
+}
+
+
+.card-header h3{
+
+color:black;
+text-align:center;
+
+}
+.login_btn{
+color: black;
+
+background-color:red;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: rgb(248, 239, 239);
+}	
+
+
+
+.card-body{
+    text-align:center;
+    margin: 25px auto 0;
+}
+.otpmobile/mail{
+margin-left:2px;
+}
+
+</style>
+   <title>Verification page</title> 
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Verification</h3>
+                    
+                </div>
+                <div class="card-body">
+            <form action="#">
+                <p>An OTP has been sent to your Mail/Phone number</p>
+                <div class="input-group form-group">
+                
+                <input type="password"  class="otpmobile/mail" name="otp" maxlength="6" pattern="[0-9]{6}" size="15" style="margin-left:103px;">
+                 
+                </div>
+                <div class="form-group">
+                    
+                <input type="submit" value="Verify" class="btn float-center login_btn">
+            
+                </div>
+                <div id="resend">
+                    Didn't receive the OTP?<br />
+                    <a href="#">Send OTP again</a><br />
+                </div>
+            </form>
+            </div>
+    </div>
+</body>
+</html>
