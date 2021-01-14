@@ -106,12 +106,14 @@ background-color: white;
     function validate()
     {
         var usn=document.getElementById("usn");
-        var memail=document.getElementById("mobileORemail");
+        var email=document.getElementById("email");
+        var mobile=document.getElementById("mobile")
          var regx1=/^[E][N][G][1-2]\d[A-Z][A-Z]\d{4}$/;
         // var regx2=
          var regx3=/^[7-9]\d{9}$/;
          //var regx4=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,20})(.[a-z]{2,8})$/;
-         var regx4=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,20})(.[a-z]{2,8})$/;
+        //  var regx4=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,20})(.[a-z]{2,8})$/;
+        var regx4=/^([a-z,0-9\.]{6,30})@gmail.com$/;
          //var regx4=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,20})$/;
          
         //var regx4=/^[a-zA-Z0-9.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]{2,}\b.$/
@@ -120,39 +122,47 @@ background-color: white;
            alert("Blank USN");
             return false;
         }
-       if(memail.value.trim()=="")
+       if(email.value.trim()=="")
         {
-            alert("Blank Phone.no/Email");
+            alert("Blank Email");
             return false;
         }
+        if(mobile.value.trim()=="")
+        {
+            alert("Blank Phone number");
+            return false;
+        }
+        
         if(regx1.test(usn.value))
         {
-          //alert("Valid USN");
-            if(regx3.test(mobileORemail.value))
+            if(regx3.test(mobile.value))
             {
-            // alert("Valid no");
-              return true;
+              
+                  if(regx4.test(email.value))
+                  {
+                  // alert("valid email");
+                      return true;
+                  }
+                  else
+                  {
+                  alert("Invalid email");
+                  return false;
+                  }
             }
-            else if(regx4.test(mobileORemail.value))
-            {
-            // alert("valid email");
-                return true;
-
-            }
-            else
-            {
-            alert("Invalid Phone.no/email");
-            return false;
+            else{
+              alert("Invalid Phone number");
+              return false;
             }
         }
+          
         else 
         {
           alert("Invalid USN");
           return false;
         }
-        
     }
-    function myFunction() {
+    
+        function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
@@ -207,7 +217,7 @@ window.onclick = function(e) {
 				
 			</div>
 			<div class="card-body">
-				<form onsubmit="return validate()" action="display_information.html">
+				<form onsubmit="return validate()" action="display">
 					<div class="input-group form-group">
             
 						<div class="input-group-prepend">
@@ -219,7 +229,7 @@ window.onclick = function(e) {
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><strong>ph</strong></span>
+							<span class="input-group-text"><i class="fa fa-phone" aria-hidden="true"></i></span>
 						</div>
 						<input type="text" class="form-control" id ="mobile" placeholder="Enter your Phone no" required>
 					</div>
