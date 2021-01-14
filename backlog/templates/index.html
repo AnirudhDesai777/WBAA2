@@ -1,6 +1,6 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+{%load static%}
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -207,7 +207,7 @@ window.onclick = function(e) {
 				
 			</div>
 			<div class="card-body">
-				<form onsubmit="return validate()" action="#">
+				<form onsubmit="return validate()" action="display_information.html">
 					<div class="input-group form-group">
             
 						<div class="input-group-prepend">
@@ -219,13 +219,19 @@ window.onclick = function(e) {
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
+							<span class="input-group-text"><strong>ph</strong></span>
+						</div>
+						<input type="text" class="form-control" id ="mobile" placeholder="Enter your Phone no" required>
+					</div>
+                    <div class="input-group form-group">
+						<div class="input-group-prepend">
 							<span class="input-group-text"><strong>@</strong></span>
 						</div>
-						<input type="text" class="form-control" id ="mobileORemail" placeholder="Enter your Phone no./Email" required>
+						<input type="text" class="form-control" id ="email" placeholder="Enter your email" required>
 					</div>
 					
 					<div class="form-group">
-						<input type="submit" value="Send OTP" class="btn float-right login_btn">
+						<input type="submit" value="Submit" class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>
@@ -235,6 +241,4 @@ window.onclick = function(e) {
 </div>
 </div>
 </body>
-</html>
-  </body>
 </html>
