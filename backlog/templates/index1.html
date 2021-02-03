@@ -11,12 +11,27 @@
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <title>Application Form</title>
         <style>
+        	.bg{
+	background-image:url('{% static "/images/image1.jpg" %}' );
+  height: 100%;
+background-position: center;
+  background-repeat: no-repeat;
+background-size: cover;
+
+	}
             
            body{
                 
                 background-color:#03A9F4;
                  
-                 } 
+                 }
+            input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                margin: 0;
+            }
                  
             img{
                   
@@ -159,7 +174,7 @@
                                     <input type="text" class="form-control" id="gmail" placeholder="Enter your Gmail" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" value="Verify" class="btn float-right login_btn">
+                                    <input type="submit" value="Submit" class="btn float-right login_btn">
                                 </div>
                             </form>
                          </div>
