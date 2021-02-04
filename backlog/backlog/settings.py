@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'exam',
 ]
 
 MIDDLEWARE = [
@@ -127,7 +128,7 @@ STATICFILES_DIRS = (
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
-#Made changes here
+# Made changes here
 # if DEBUG:
 #    STATICFILES_DIRS = [
 #    os.path.join(BASE_DIR, 'static'),
