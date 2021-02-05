@@ -27,7 +27,7 @@ def index1(request):
         print(request.POST.get('MOBILE'))
         print(request.POST.get('EMAIL'))
 
-    return render(request, 'index1.html', {"message": "The Student Details have been entered..."})
+    return render(request, 'index1.html')
     # else:
     #     return render(request, 'index.html', {"message": "The Student details already exists..."})
 
