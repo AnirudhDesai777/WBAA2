@@ -5,25 +5,31 @@ from django.http import HttpResponse
 from django.shortcuts import render
 import requests
 import json
-from .models import student_details
+from .models import student_details, details
 
 
 def index1(request):
-    student_usn = request.POST.get('USN')
-    student_mobile = request.POST.get('MOBILE')
-    student_email = request.POST.get('EMAIL')
 
-    post = student_details()
-    post.USN = student_usn
-    post.MOBILE = student_mobile
-    post.EMAIL = student_email
-    post.save()
+    if request.method == "POST":
+        student_usn = request.POST.get('USN')
+        student_mobile = request.POST.get('MOBILE')
+        student_email = request.POST.get('EMAIL')
 
-    print(request.POST.get('USN'))
-    print(request.POST.get('MOBILE'))
-    print(request.POST.get('EMAIL'))
+        post = student_details()
+        # if student_usn.exists() == False:
 
-    return render(request, 'index1.html')
+        post.USN = student_usn
+        post.MOBILE = student_mobile
+        post.EMAIL = student_email
+        post.save()
+
+        print(request.POST.get('USN'))
+        print(request.POST.get('MOBILE'))
+        print(request.POST.get('EMAIL'))
+
+    return render(request, 'index1.html', {"message": "The Student Details have been entered..."})
+    # else:
+    #     return render(request, 'index.html', {"message": "The Student details already exists..."})
 
 
 def otp(request):

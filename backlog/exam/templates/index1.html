@@ -90,64 +90,64 @@
         }
     </style>
     <script type=text/javascript>
-            function validate()
-            {
-                var usn=document.getElementById("usn");
-                var mail=document.getElementById("gmail");
-                var mobile=document.getElementById("mobile")
-                 var regx1=/^[E][N][G][1-2]\d[A-Z][A-Z]\d{4}$/;
+            // function validate()
+            // {
+            //     var usn=document.getElementById("usn");
+            //     var mail=document.getElementById("gmail");
+            //     var mobile=document.getElementById("mobile")
+            //      var regx1=/^[E][N][G][1-2]\d[A-Z][A-Z]\d{4}$/;
                 
-                 var regx3=/^[7-9]\d{9}$/;
-                 //var regx4=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,20})(.[a-z]{2,8})$/;
-                //  var regx4=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,20})(.[a-z]{2,8})$/;
-                var regx4=/^([a-z,0-9\.]{6,30})@gmail.com$/;
-                 //var regx4=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,20})$/;
+            //      var regx3=/^[7-9]\d{9}$/;
+            //      //var regx4=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,20})(.[a-z]{2,8})$/;
+            //     //  var regx4=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,20})(.[a-z]{2,8})$/;
+            //     var regx4=/^([a-z,0-9\.]{6,30})@gmail.com$/;
+            //      //var regx4=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,20})$/;
                  
-                //var regx4=/^[a-zA-Z0-9.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]{2,}\b.$/
-                if(usn.value.trim()=="")
-               {
-                   alert("Blank USN");
-                    return false;
-                }
-               if(mail.value.trim()=="")
-                {
-                    alert("Blank Email");
-                    return false;
-                }
-                if(mobile.value.trim()=="")
-                {
-                    alert("Blank Phone number");
-                    return false;
-                }
+            //     //var regx4=/^[a-zA-Z0-9.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]{2,}\b.$/
+            //     if(usn.value.trim()=="")
+            //    {
+            //        alert("Blank USN");
+            //         return false;
+            //     }
+            //    if(mail.value.trim()=="")
+            //     {
+            //         alert("Blank Email");
+            //         return false;
+            //     }
+            //     if(mobile.value.trim()=="")
+            //     {
+            //         alert("Blank Phone number");
+            //         return false;
+            //     }
                 
-                if(regx1.test(usn.value))
-                {
-                    if(regx3.test(mobile.value))
-                    {
+            //     if(regx1.test(usn.value))
+            //     {
+            //         if(regx3.test(mobile.value))
+            //         {
                       
-                          if(regx4.test(mail.value))
-                          {
-                          // alert("valid email");
-                              return true;
-                          }
-                          else
-                          {
-                          alert("Invalid gmail");
-                          return false;
-                          }
-                    }
-                    else{
-                      alert("Invalid Phone number");
-                      return false;
-                    }
-                }
+            //               if(regx4.test(mail.value))
+            //               {
+            //               // alert("valid email");
+            //                   return true;
+            //               }
+            //               else
+            //               {
+            //               alert("Invalid gmail");
+            //               return false;
+            //               }
+            //         }
+            //         else{
+            //           alert("Invalid Phone number");
+            //           return false;
+            //         }
+            //     }
                   
-                else 
-                {
-                  alert("Invalid USN");
-                  return false;
-                }
-            }
+            //     else 
+            //     {
+            //       alert("Invalid USN");
+            //       return false;
+            //     }
+            // }
             </script>
 </head>
 
@@ -163,7 +163,7 @@
                     <h3><strong>Details</strong></h3>
                 </div>
                 <div class="card-body">
-                    <form action="" onsubmit="return validate()" method="POST">
+                    <form action="" onsubmit="" method="POST">
                         {% csrf_token %}
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
@@ -194,7 +194,7 @@
             </div>
         </div>
     </div>
-
+    {{message}}
 
 </body>
 
