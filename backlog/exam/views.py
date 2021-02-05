@@ -6,7 +6,7 @@ from django.shortcuts import render
 import requests
 import json
 from .models import student_details, details
-
+from .forms import s_form 
 
 def index(request):
 
@@ -37,4 +37,7 @@ def otp(request):
 
 
 def display_information(request):
-    return render(request, 'display_information.html')
+    # return render(request, 'display_information.html')
+    context ={} 
+    context['form']= s_form() 
+    return render(request, "display_information.html", context) 

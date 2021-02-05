@@ -12,15 +12,44 @@
 
   <style>
 	
+        body{
+            background-color:#03A9F4;
+        }
+	.container{
+            height: 100%;
+            align-content: center;
+            
+            }
+            .login_btn{
+        color: black;
+        background-color:#FFFF00; 
+        width: 100px;
+        }
+      .login_btn:hover{
+      color: black;
+      background-color: red;
+      }
 	</style>
     <title>Application form</title>
 
   </head>
   <body>
-    <div class="d-flex justify-content-center">
+    <!-- <div class="d-flex justify-content-left">
       <img src='{% static "/images/image5.png" %}'>
-      </div>
-
-    
+      </div> -->
+      <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="jumbotron">
+              <img src='{% static "/images/image5.png" %}'>
+            </br>
+          </br>
+      <form action = "" method = "post"> 
+        {% csrf_token %} 
+        {{form.as_p }} 
+        <input type="submit" value="Submit" class="btn float-right login_btn">
+    </form> 
+    </div>
+    </div>
+    </div>
 </body>
 </html>
