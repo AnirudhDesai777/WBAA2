@@ -110,64 +110,64 @@ background-color: white;
 	</style>
     <title>Application form</title>
 	<script type=text/javascript>
-    function validate()
-    {
-        var usn=document.getElementById("usn");
-        var email=document.getElementById("email");
-        var mobile=document.getElementById("mobile")
-         var regx1=/^[E][N][G][1-2]\d[A-Z][A-Z]\d{4}$/;
-        // var regx2=
-         var regx3=/^[7-9]\d{9}$/;
-         //var regx4=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,20})(.[a-z]{2,8})$/;
-        //  var regx4=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,20})(.[a-z]{2,8})$/;
-        var regx4=/^([a-z,0-9\.]{6,30})@gmail.com$/;
-         //var regx4=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,20})$/;
+    // function validate()
+    // {
+    //     var usn=document.getElementById("usn");
+    //     var email=document.getElementById("email");
+    //     var mobile=document.getElementById("mobile")
+    //      var regx1=/^[E][N][G][1-2]\d[A-Z][A-Z]\d{4}$/;
+    //     // var regx2=
+    //      var regx3=/^[7-9]\d{9}$/;
+    //      //var regx4=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,20})(.[a-z]{2,8})$/;
+    //     //  var regx4=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,20})(.[a-z]{2,8})$/;
+    //     var regx4=/^([a-z,0-9\.]{6,30})@gmail.com$/;
+    //      //var regx4=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,20})$/;
          
-        //var regx4=/^[a-zA-Z0-9.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]{2,}\b.$/
-        if(usn.value.trim()=="")
-       {
-           alert("Blank USN");
-            return false;
-        }
-       if(email.value.trim()=="")
-        {
-            alert("Blank Email");
-            return false;
-        }
-        if(mobile.value.trim()=="")
-        {
-            alert("Blank Phone number");
-            return false;
-        }
+    //     //var regx4=/^[a-zA-Z0-9.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]{2,}\b.$/
+    //     if(usn.value.trim()=="")
+    //    {
+    //        alert("Blank USN");
+    //         return false;
+    //     }
+    //    if(email.value.trim()=="")
+    //     {
+    //         alert("Blank Email");
+    //         return false;
+    //     }
+    //     if(mobile.value.trim()=="")
+    //     {
+    //         alert("Blank Phone number");
+    //         return false;
+    //     }
         
-        if(regx1.test(usn.value))
-        {
-            if(regx3.test(mobile.value))
-            {
+    //     if(regx1.test(usn.value))
+    //     {
+    //         if(regx3.test(mobile.value))
+    //         {
               
-                  if(regx4.test(email.value))
-                  {
-                  // alert("valid email");
-                      return true;
-                  }
-                  else
-                  {
-                  alert("Invalid email");
-                  return false;
-                  }
-            }
-            else{
-              alert("Invalid Phone number");
-              return false;
-            }
-        }
+    //               if(regx4.test(email.value))
+    //               {
+    //               // alert("valid email");
+    //                   return true;
+    //               }
+    //               else
+    //               {
+    //               alert("Invalid email");
+    //               return false;
+    //               }
+    //         }
+    //         else{
+    //           alert("Invalid Phone number");
+    //           return false;
+    //         }
+    //     }
           
-        else 
-        {
-          alert("Invalid USN");
-          return false;
-        }
-    }
+    //     else 
+    //     {
+    //       alert("Invalid USN");
+    //       return false;
+    //     }
+    // }
     
         function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
@@ -220,31 +220,31 @@ window.onclick = function(e) {
 	<div class="d-flex justify-content-center ">
 		<div class="card">
 			<div class="card-header">
-				<h3><strong>Student Login</strong></h3>
+				<h3><strong>Fill the details</strong></h3>
 				
 			</div>
 			<div class="card-body">
-				<form onsubmit="return validate()" action="display">
+				<form onsubmit="" action="display" method="POST">
 					<div class="input-group form-group">
             
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fa fa-user"></i></span>
             </div>
             
-						<input type="text" class="form-control"  id="usn" placeholder="Enter your USN" required>
+						<input type="text" class="form-control" name="USN"  id="usn" placeholder="Enter your USN" required>
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fa fa-phone" aria-hidden="true"></i></span>
 						</div>
-						<input type="text" class="form-control" id ="mobile" placeholder="Enter your Phone no" required>
+						<input type="text" class="form-control" name="MOBILE"id ="mobile" placeholder="Enter your Phone no" required>
 					</div>
                     <div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><strong>@</strong></span>
 						</div>
-						<input type="text" class="form-control" id ="email" placeholder="Enter your email" required>
+						<input type="text" class="form-control" name="EMAIL" id ="email" placeholder="Enter your email" required>
 					</div>
 					
 					<div class="form-group">

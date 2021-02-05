@@ -8,7 +8,7 @@ import json
 from .models import student_details, details
 
 
-def index1(request):
+def index(request):
 
     if request.method == "POST":
         student_usn = request.POST.get('USN')
@@ -27,7 +27,7 @@ def index1(request):
         print(request.POST.get('MOBILE'))
         print(request.POST.get('EMAIL'))
 
-    return render(request, 'index1.html')
+    return render(request, 'index.html')
     # else:
     #     return render(request, 'index.html', {"message": "The Student details already exists..."})
 
