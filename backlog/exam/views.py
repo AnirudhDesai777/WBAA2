@@ -6,7 +6,8 @@ from django.shortcuts import render
 import requests
 import json
 from .models import student_details, details
-from .forms import s_form 
+from .forms import s_form
+
 
 def index(request):
 
@@ -28,8 +29,6 @@ def index(request):
         print(request.POST.get('EMAIL'))
 
     return render(request, 'index.html')
-    # else:
-    #     return render(request, 'index.html', {"message": "The Student details already exists..."})
 
 
 def otp(request):
@@ -37,7 +36,19 @@ def otp(request):
 
 
 def display_information(request):
-    # return render(request, 'display_information.html')
-    context ={} 
-    context['form']= s_form() 
-    return render(request, "display_information.html", context) 
+
+    context = {}
+    form = s_form()
+    context['form'] = form
+    if request.GET:
+        temp = request.GET['dept']
+        temp1 = request.GET['exam_type']
+        temp2 = request.GET['sem']
+        temp3 = request.GET['subject']
+        temp4 = request.GET['subject_code']
+        print(temp)
+        print(temp1)
+        print(temp2)
+        print(temp3)
+        print(temp4)
+    return render(request, "display_information.html", context)
